@@ -6,7 +6,7 @@ var app = express()
 var mqtt = require('mqtt');
 
 // Your Channel access token (long-lived) 
-const CH_ACCESS_TOKEN = 'C7Bir3hg4Xo59zxXg6a54J69HZtx0GoTV/x1Kg7Bh3yUDTpLnIEBRT8TIHWPqidYAwQkqwvFLu80kuM/zl1vjnA4W9tVR+agHpNpQS72baf6ti7g53JQqyO/4YSRanHxLZ/ddSL7pelM4vU/my0augdB04t89/1O/w1cDnyilFU=';
+const CH_ACCESS_TOKEN = 'go7j/O2oGdGTRacKgU8cW0E+MV9T/qZ/97tPUQVDIjy3X8zpCGp8+xrrwLi+sHwGo1x/VGk6DTx5UxF0SeIjFcPVpHNxK7knMtO1uWmJH7dREppFCB8vI9yC59TY9exv2zbBeAgV6ZJfrzQ1EaobrAdB04t89/1O/w1cDnyilFU=';
 
 // MQTT Host
 var mqtt_host = 'mqtt://tailor.cloudmqtt.com';
