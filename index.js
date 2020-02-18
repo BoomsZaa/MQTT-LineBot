@@ -8,7 +8,7 @@ var app = express()
 // Your Channel access token (long-lived) 
 const CH_ACCESS_TOKEN = 'go7j/O2oGdGTRacKgU8cW0E+MV9T/qZ/97tPUQVDIjy3X8zpCGp8+xrrwLi+sHwGo1x/VGk6DTx5UxF0SeIjFcPVpHNxK7knMtO1uWmJH7dREppFCB8vI9yC59TY9exv2zbBeAgV6ZJfrzQ1EaobrAdB04t89/1O/w1cDnyilFU=';
 
-var mqtt_host = 'broker.mqttdashboard.com';
+var mqtt_host = 'mqtt://broker.mqttdashboard.com';
 
 const MQTT_SERVER = "broker.mqttdashboard.com";
 const MQTT_PORT = "1883";
