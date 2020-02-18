@@ -9,15 +9,15 @@ var mqtt = require('mqtt');
 const CH_ACCESS_TOKEN = 'go7j/O2oGdGTRacKgU8cW0E+MV9T/qZ/97tPUQVDIjy3X8zpCGp8+xrrwLi+sHwGo1x/VGk6DTx5UxF0SeIjFcPVpHNxK7knMtO1uWmJH7dREppFCB8vI9yC59TY9exv2zbBeAgV6ZJfrzQ1EaobrAdB04t89/1O/w1cDnyilFU=';
 
 // MQTT Host
-var mqtt_host = 'mqtt://broker.hivemq.com';
+var mqtt_host = 'mqtt://broker.mqttdashboard.com';
 
 // MQTT Topic
 var mqtt_topic = '/ESP32';
 
 // MQTT Config
 var options = {
-    port: 1883,
-    host: 'mqtt://broker.hivemq.com',
+    port: 8000,
+    host: 'mqtt://broker.mqttdashboard.com',
     clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
     username: 'boomskung',
     password: '0831543715q',
