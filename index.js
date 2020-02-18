@@ -1,3 +1,5 @@
+var mqtt = require('mqtt');
+
 var express = require('express')
 var bodyParser = require('body-parser')
 var request = require('request')
@@ -8,27 +10,41 @@ var mqtt = require('mqtt');
 // Your Channel access token (long-lived) 
 const CH_ACCESS_TOKEN = 'go7j/O2oGdGTRacKgU8cW0E+MV9T/qZ/97tPUQVDIjy3X8zpCGp8+xrrwLi+sHwGo1x/VGk6DTx5UxF0SeIjFcPVpHNxK7knMtO1uWmJH7dREppFCB8vI9yC59TY9exv2zbBeAgV6ZJfrzQ1EaobrAdB04t89/1O/w1cDnyilFU=';
 
-// MQTT Host
-var mqtt_host = 'mqtt://broker.mqttdashboard.com';
+const MQTT_SERVER = "broker.mqttdashboard.com";
+const MQTT_PORT = "1883";
+//if your server don't have username and password let blank.
+const MQTT_USER = ""; 
+const MQTT_PASSWORD = "";
 
-// MQTT Topic
-var mqtt_topic = '/ESP32';
+var mqtt_topic = 'ESP32';
 
-// MQTT Config
-var options = {
-    port: 8000,
-    host: 'mqtt://broker.mqttdashboard.com',
-    clientId: 'mqttjs_' + Math.random().toString(16).substr(2, 8),
-    username: 'boomskung',
-    password: '0831543715q',
-    keepalive: 60,
-    reconnectPeriod: 1000,
-    protocolId: 'MQIsdp',
-    protocolVersion: 3,
-    clean: true,
-    encoding: 'utf8'
-};
+// Connect MQTT
+var client = mqtt.connect({
+    host: MQTT_SERVER,
+    port: MQTT_PORT,
+    username: MQTT_USER,
+    password: MQTT_PASSWORD
+});
 
+client.on('connect', function () {
+    // Subscribe any topic
+    console.log("MQTT Connect");
+    client.subscribe(mqtt_topic, function (err) {
+        if (err) {
+            console.log(err);
+        }
+    });
+});
+
+// Receive Message and print on terminal
+client.on('message', function (topic, message) {
+    // message is Buffer
+    console.log(message.toString());
+});
+
+// setInterval(() => {
+//     client.publish(mqtt_topic, "hello from NodeJS");
+// }, 5000);
 
 app.use(bodyParser.json())
 
