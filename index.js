@@ -134,7 +134,7 @@ function inFo (sender, text) {
 
 
 function ledOn (sender, text) {
-//   var client = mqtt.connect(mqtt_host, options);
+  var client = mqtt.connect(mqtt_host);
   client.on('connect', function() { // When connected
       console.log('MQTT connected');
       // subscribe to a topic
@@ -181,7 +181,7 @@ function ledOn (sender, text) {
 }
 
 function ledOff (sender, text) {
-//   var client = mqtt.connect(mqtt_host, options);
+  var client = mqtt.connect(mqtt_host);
   client.on('connect', function() { // When connected
       console.log('MQTT connected');
       // subscribe to a topic
